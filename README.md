@@ -54,3 +54,15 @@ var manual = 'Como proceder?\n\n'+
 			 '**CHARTER 2**\n'+
 			 '- Explorar "Lista de Compras" e "Lixo"\n'+
 			 '- Funcionalidades: informações, compartilhamento, editar, listar e testar tudo no lixo.' 
+
+Alterando git de Master para main
+
+rm -rf .git //utilizo caso queira limpar o git do projeto
+
+git init
+
+git remote add origin  https://
+
+git pull origin main
+
+git checkout -b main
