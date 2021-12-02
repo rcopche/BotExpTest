@@ -1,0 +1,59 @@
+    {
+        "category":"SdCard",
+        "questions":[{
+            "q1":"Teste o aplicativo em execução removento o cartão SD.",
+            "q2":"Teste o aplicativo sem o cartão SD.",
+            "q3":"Teste o aplicativo sem o cartão SD e depois coloque."
+           }
+            
+        ],
+        "category":"Swipe",
+        "questions":[{
+            "q1":"Observe se a precisão do movimento está de acordo com o esperado.",
+            "q2":"Teste segurando o celular em posições diferentes.",
+            "q3":"Veja se a aplicação reage adequadamente ao movimento de Swipe."
+        }],
+        "BlueTooth":[{
+            "bt1":"Teste o aplicativo com o bluetooth desativado.",
+            "bt2":"Teste o aplicativo quando ele perdeu o sinal do dispositivo pareado.",
+            "bt3":"Teste o aplicativo variando distância entre dispositivos emparelhados.",
+            "bt4":"Teste o aplicativo emparelhando-se com diferentes tipos de dispositivos."
+        }],
+        "Gps":[{
+            "gps1":"Teste o aplicativo em movimento.",
+            "gps2":"Teste o aplicativo quando o GPS perdeu o sinal.",
+            "gps3":"Teste o aplicativo com o GPS desativado.",
+            "gps4":"Teste o aplicativo sem conexão a internet com o GPS ativado."
+        }],
+        "Qg":[{
+            "qg1":"Teste o aplicativo após ele ser interrompido por um evento inesperado",
+            "qg2":"Teste o aplicativo em diferentes tamanhos de tela.",
+            "qg3":"Teste o aplicativo ao receber uma notificação.",
+            "qg4":"Teste o aplicativo quando ele entrar em um estado ocioso.",
+            "qg5":"Teste o aplicativo clicando nos botões físicos do dispositivo.",
+            "qg6":"Teste o aplicativo em outro dispositivo com configurações diferentes.",
+            "qg7":"Teste entradas com valores numéricos limite, como 0 ou valores muito altos.",
+            "qg8":"Teste entradas com valores negativos.",
+            "qg9":"Teste entradas de valores numéricos com números decimais.",
+            "qg10":"Teste entradas com caracteres especiais.",
+            "qg11":"Se os valores esperados são numéricos tente entrar letras.Se os valores esperados são numéricos tente entrar letras.",
+            "qg12":"Teste entradas com strings longas.",
+            "qg13":"Em campos que necessitam validação como CPF, CNPJ entre outros, de entradas de valores fora do padrão ou inexistentes.",
+            "qg14":"Em casos em que o software espera uma sequência de valores como são casos de vetores e matrizes, procure dar entradas com valores únicos",
+            "qg15":"Ainda nos casos em que se espera sequências de valores, busque derivar testes de modo que o primeiro elemento, o elemento do meio e o último elemento da sequência, sejam acessados.",
+            "qg16":"Escolha entradas que forcem o sistema a gerar todas as mensagens de erro.",
+            "qg17":"Repita a mesma entrada ou uma série de entradas inúmeras vezes.",
+            "qg18":"Force a geração de saídas inválidas.",
+            "qg19":"Faça com que os resultados dos cálculos gerem valores muito altos ou negativos."            
+        }], 
+        "Cr":[{
+            "cr1":"Teste o aplicativo em diferentes conexões.",
+            "cr2":"Teste o aplicativo sem conexão de rede.",
+            "cr3":"Teste o aplicativo quando há perda de sinal.",
+            "cr4":"Teste o aplicativo migrando da rede wifi para dados móveis.",
+            "cr5":"Teste o aplicativo quando a atrasos na rede.",
+            "cr6":"Teste o aplicativo quando o sinal é recuperado logo após a perda.",
+            "cr7":"Teste o aplicativo em modo avião."
+        }]
+ 
+    }
