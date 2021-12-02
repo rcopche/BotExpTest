@@ -66,3 +66,9 @@ git remote add origin  https://
 git pull origin main
 
 git checkout -b main
+
+git add .
+ 
+git commit -m """
+
+git push origin
