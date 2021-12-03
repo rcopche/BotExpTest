@@ -1,4 +1,5 @@
 require('dotenv').config();
+const http = require('http')
 const { Client, Intents, MessageEmbed } = require('discord.js');
 const resposta = require("./src/util/resposta")
 const timer = require("./src/util/timer")
@@ -15,6 +16,10 @@ const form = require('./src/util/form');
 const deleteMessages = require('./src/util/deleteMessages')
 const fs = require('fs');
 const { MessageAttachment } = require('discord.js');
+
+http.createServer(function(req,res){
+  res.end('Teste')
+}).listen(3000);
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_PRESENCES] });
 //const client = new Client({ ws: {intents: Intents.ALL} });
