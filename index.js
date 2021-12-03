@@ -19,7 +19,8 @@ const { MessageAttachment } = require('discord.js');
 
 http.createServer(function(req,res){
   res.end('Teste')
-}).listen(3000);
+  console.log('De pé')
+}).listen(process.env.PORT || 5000);
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_PRESENCES] });
 //const client = new Client({ ws: {intents: Intents.ALL} });
