@@ -4,7 +4,8 @@ const timer = require("./timer")
 
 
 module.exports = {
-    function (message){             
+    function (message){    
+        var anexo = [];         
         try{
             
             if(message.content.toLowerCase().replace('?','') === 'relatar'){
@@ -18,6 +19,7 @@ module.exports = {
                 const questions = [
                     `O que deseja relatar? \nPara **BUG** digite    **1**; \nPara **ISSUE** digite    **2**; \nPara **SAIR** digite    **3**.`,
                     'OK, Descreva brevemente ',
+                    'Muito bem, agora você pode anexar arquivos ou imagens relacionadas ao seu relato clicando no **+** que está do lado esquerdo da caixa de digitação.',
                     'Digite **S** para SALVAR ou **C** para CANCELAR.'
                 ]
                         
@@ -34,27 +36,39 @@ module.exports = {
                 message.channel.send(questions[counter++])
 
                 collector.on('collect', (m) => {                    
-                        if(counter < questions.length){
-                            //console.log(counter)
-                            if(counter == 1){
-                                if(m.content === '1')
-                                {
-                                    m.channel.send(questions[counter++] + 'o **BUG:**' )
-                                }else if(m.content === '2')
-                                {
-                                    m.channel.send(questions[counter++] + 'a **ISSUE:**' )
-                                }else 
-                                {                            
-                                    message.channel.send('**CANCELADO**')
-                                    counter = 3
-                                    sair = true
-                                    return
+                    if(counter < questions.length){
+                        //console.log(counter)
+                        if(counter == 1){
+                            if(m.content === '1')
+                            {
+                                m.channel.send(questions[counter++] + 'o **BUG:**.' )
+                            }else if(m.content === '2')
+                            {
+                                m.channel.send(questions[counter++] + 'a **ISSUE:**' )
+                            }else 
+                            {                            
+                                message.channel.send('**CANCELADO**')
+                                counter = 3
+                                sair = true
+                                return
+                            }                                                       
+                        }else if(counter == 2){
+                            m.channel.send(questions[counter++]);
+                        } else if(counter == 3){
+                            var i = 0
+                            if (m.attachments) {
+                                let attachments = m.attachments;       
+                                for (let file of attachments) {    
+                                    anexo[i] = `${file[1].attachment}` 
+                                    console.log(file[1].attachment)
+                                    i++;
                                 }
-                            }else if(counter == 2){
-                                m.channel.send(questions[counter++])
-                            }               
-                            
-                        }                    
+                                //console.log(attachments)
+                            } 
+                            m.channel.send(questions[counter++])                                
+                        }       
+                                            
+                    }                    
                 })        
                
                 collector.on('end', (collected) => {
@@ -73,7 +87,7 @@ module.exports = {
                             counter++                          
                         })
                         
-                        if(resposta[2].toLowerCase() === 's'){ 
+                        if(resposta[3].toLowerCase() === 's'){ 
                             var info = timer.TimerInfo
                             var i = new info(message)                            
                             //bug
@@ -81,7 +95,7 @@ module.exports = {
                                 var retorno = formController.findById(message)
                                 retorno.then(function(result) {
                                     try{
-                                        formController.insertBugs(message, i, resposta[1])
+                                        formController.insertBugs(message, i, resposta[1], anexo)
                                         message.reply("**Bug salvo com sucesso.**")
                                     }catch(err){                                                                 
                                         message.reply("**Erro ao salvar bug**")
@@ -92,7 +106,7 @@ module.exports = {
                                 var retorno = formController.findById(message)
                                 retorno.then(function(result) {
                                     try{
-                                        formController.insertIssue(message, i, resposta[1])
+                                        formController.insertIssue(message, i, resposta[1], anexo)
                                         message.reply("**Issue salva com sucesso.**")
                                     }catch(err){                                                               
                                         message.reply("**Erro ao salvar issue**" + err)

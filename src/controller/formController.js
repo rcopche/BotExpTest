@@ -7,17 +7,7 @@ module.exports = {
   //CRIAR CAMPOS IDENTIFICANDO QUAL O APP, CHARTER E SESSÃO O BUG FOI ENCONTRADO.
 
 
-  async insertBugs(message, info, bugFound){      
-    var anexo = [];
-    i=0;
-    if (message.attachments) {
-      let attachments = message.attachments;       
-      for (let file of attachments) {    
-        anexo[i] = `${file[1].attachment}` 
-        i++;
-      }
-      //console.log(attachments)
-    }
+  async insertBugs(message, info, bugFound, anexo){       
     const form = mongoose.model('bugs', formSchema.bugSchema)
     const bug = new form({
       testerId: `${message.author.id}`,          
@@ -34,16 +24,8 @@ module.exports = {
 
   // ////////////////////////////////
 
-  async insertIssue(message, info, issueFound){  
-    var anexo = [];
-    i=0;
-    if (message.attachments) {
-      let attachments = message.attachments;       
-      for (let file of attachments) {    
-        anexo[i] = `${file[1].attachment}` 
-        i++;
-      }
-    }    
+  async insertIssue(message, info, issueFound, anexo){  
+    console.log(anexo)
     const form = mongoose.model('issues', formSchema.issueSchema)
     const issue = new form({
       testerId: `${message.author.id}`,          
