@@ -33,7 +33,7 @@ function Timer(message) {
     }
 }
 
-//Função que que recebe o tempo digitado pelo testador
+//Função que recebe o tempo digitado pelo testador
 async function SetTime(message){             
     try{       
             const questions = [                
@@ -66,7 +66,7 @@ async function SetTime(message){
                 console.log(`Collected ${collected.size} messages`)
     
                 if(collected.size < questions.length){
-                    message.reply("Para iniciar a ssessão você deve digitar o tempo em minutos. Por exemplo digite 30 para 30 minutos de teste.")
+                    message.reply("Para iniciar a sessão você deve digitar o tempo em minutos. Por exemplo digite 30 para 30 minutos de teste.")
                     return
                 }  
                 //uso para pegar a posição do vetor                     
@@ -101,11 +101,13 @@ async function SetTime(message){
 
                     }  else{
                         message.reply('```diff\n- A Sessão de teste não foi iniciada. \nAs opções digitadas não são válidas. \nTente novamente.```')
+                        liga = 0
                         console.log('Opções inválidas')
                         return
                     }                 
                 }else{
                     message.reply('```diff\n- A Sessão de teste não foi iniciada. \nAs opções digitadas não são válidas. \nTente novamente.```')
+                    liga = 0
                     console.log('Opções inválidas')
                     return
                 }
@@ -138,7 +140,7 @@ async function tempo(message) {
         //tempo de teste terminado bot faz a notificação e o processo é parado
         if(minRestante==0){
             liga = 0;
-            message.reply('O tempo da sessão de teste foi finalizado. Caso deseje relatar mais alguma ocorrência digite "?relatar".');
+            message.reply('O tempo da sessão de teste foi finalizado. ');
         } else{
             //se tempo maior que 6 minutos notifica de 3 em 3 min. Menor que 6 notifica de 1 em 1min.
             if(minRestante > 6){

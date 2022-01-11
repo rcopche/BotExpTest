@@ -72,3 +72,6 @@ git add .
 git commit -m """
 
 git push origin
+
+
+https://discord.com/developers/applications
