@@ -47,14 +47,14 @@ client.on("messageCreate", function (message) {
     //   interacaoController.guardaConversa(message)
     // }
 
-    //sendAttached.sendAttached(message, 'https://puu.sh/DTwNj/a3f2281a71.gif', 'test.gif')
-  
+    /* sendAttached.sendAttached(message, 'https://puu.sh/DTwNj/a3f2281a71.gif', 'test.gif') */
+    
 
-    if(message.content.toLowerCase()==='?lista')
+    /* if(message.content.toLowerCase()==='?lista')
     {
       var question = questionController.select();  
       message.reply(question)  
-    }
+    } */
     
 
     //se interação começar com novocanal cria canal
@@ -83,6 +83,18 @@ client.on("messageCreate", function (message) {
           sendEmbed.sendEmbed(message)
         }else{
           message.reply(ret.retorno);
+          if(message.content.toLowerCase() === '?charter'){
+            sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter1.gif', 'Charter 1 Lembretes.png')
+            //sleep(50000)
+            //message.reply('Charter 1 - Tela de Lembretes')     
+            sleep(50000)
+            sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter2C.png', 'Charter 2 Compras.png')           
+            sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter2L.png', 'Charter 2 Lixo.png')
+            
+           // message.reply('Charter 2 - Lista de Compras e Lixo')
+            
+                        
+          }
         }
       }
     } else if (message.content.substring(0, 10).toLowerCase() === '?novocanal') {
@@ -106,7 +118,13 @@ client.on("messageCreate", function (message) {
   } else {
     return
   }
+
+
 });
+
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}  
 
 client.login(process.env.TOKEN);
 

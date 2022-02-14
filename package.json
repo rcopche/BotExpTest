@@ -7,7 +7,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "start":"node index.js",
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,6 +19,6 @@
     "dotenv": "^10.0.0",
     "fs": "^0.0.1-security",
     "mongoose": "^5.13.7",
-    "nodemon": "^2.0.12"
+    "nodemon": "^2.0.15"
   }
 }

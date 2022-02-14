@@ -87,7 +87,7 @@ async function SetTime(message){
                 })   
                 
                 if(app!=0 && charter!=0 && minDigitado!=0){
-                    if(app<3 && charter<3 && minDigitado > 20){
+                    if(app<3 && charter<3 && minDigitado >= 30){
                         console.log("Charter: ",charter)
                         console.log("App: ",app)
                         console.log("Min: ",minDigitado)

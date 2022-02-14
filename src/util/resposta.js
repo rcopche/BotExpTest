@@ -62,7 +62,7 @@ var b14 = '**Particionamento de Classe de Equivalência**\n'+
 'Caso um valor faça parte da primeira ou da terceira classe, espera-se um erro, diferentemente da segunda, onde seria esperado uma resposta positiva.'			  
 
 var b15 = '**Análise de Valor Limite**\n'+ 
-'O tester utiliza valores que estão nas extremidades entre as classes de equivalência\.n'+
+'O tester utiliza valores que estão nas extremidades entre as classes de equivalência.\n'+
 '**Exemplo**: Considerando as classes de equivalência podem ser classificadas como Abaixo de 18, Entre 18 e 70 e Acima de 70. O tester coloca valores como 17, 18, 19, 69, 70, 71'
 
 
@@ -148,7 +148,7 @@ var man = '**COMO PROCEDER NO TESTE EXPLORATÓRIO?**\n\n'+
 // 'cortes e também devem ser narrados. Narrando as suas interações, o que está'+
 // 'sendo testado/explorado. E caso haja bugs você também deve narrar isso.\n'+
 
-var ch = '**---------------BOOK CATALOGUE---------------**\n'+
+/* var ch = '**---------------BOOK CATALOGUE---------------**\n'+
 '**CHARTER 1**\n'+
 '- Explorar "Adicionar - Livro Manualmente"\n'+
 '- Funcionalidades: explorar as abas "details e notas"\n'+
@@ -162,7 +162,16 @@ var ch = '**---------------BOOK CATALOGUE---------------**\n'+
 '- Funcionalidades: informações, compartilhamento, editar, listar"\n'+
 '**CHARTER 2**\n'+
 '- Explorar "Lista de Compras" e "Lixo"\n'+
-'- Funcionalidades: informações, compartilhamento, editar, listar e testar tudo no lixo.' 
+'- Funcionalidades: informações, compartilhamento, editar, listar e testar tudo no lixo.'  */
+
+var ch = '**---------------REMINDERS---------------**\n'+
+'**CHARTER 1**\n'+
+'- Explorar "Lembretes"\n'+
+'- Funcionalidades: informações, compartilhamento, editar, listar"\n'+
+'**CHARTER 2**\n'+
+'- Explorar "Lista de Compras" e "Lixo"\n'+
+'- Funcionalidades: informações, compartilhamento, editar, listar e testar tudo no lixo.\n' +
+'**--CONFIRA AS IMAGENS ABAIXO--**'
 
 var aj = "**Para sugestões** é só digitar, **?Bluetooth, ?Conexão de rede, ?Swipe, ?Geral, ?Camera, ?Sdcard, ?Gps**.\n" +
 "Caso prefira várias sugestões sobre algum dos temas acima use as tags:" +
@@ -220,11 +229,11 @@ var resposta = [
 ];
 
 
-var naoSei = ["Não tenho conhecimento sobre esse conteúdo. \nEscreva por exemplo <GPS> ou <teste>", 
-"Tente novamente, não entendi o que pediu, tente um <olá>. Posso te dar dicas de como testar o bluetooth, é só escrever <bluetooth> ou <início>.", 
-"Não consegui encontrar nada sobre isso. Digite <Manual> que opções sobre assuntos que tenho em meu banco de dados serão mostradas.",
-"Gostaria de tentar algo diferente? Meus conhecimentos são de temas específicos mas se quiser posso falar sobre testes gerais. \nDigite <geral> ou <menu>",
-"Ops não entendi. \nDigite <tela> que lhe darei sugestões sobre esse tema, ou <menu>"];
+var naoSei = ["Não tenho conhecimento sobre esse conteúdo. \nEscreva por exemplo ?GPS ou ?teste", 
+"Tente novamente, não entendi o que pediu, tente um ?olá. Posso te dar dicas de como testar o bluetooth, é só escrever ?bluetooth ou ?início.", 
+"Não consegui encontrar nada sobre isso. Digite ?Manual? que opções sobre assuntos que tenho em meu banco de dados serão mostradas.",
+"Gostaria de tentar algo diferente? Meus conhecimentos são de temas específicos mas se quiser posso falar sobre testes gerais. \nDigite ?geral",
+"Ops não entendi. \nDigite ?tela que lhe darei sugestões sobre esse tema."];
 
 
 
