@@ -18,8 +18,8 @@ const fs = require('fs');
 const { MessageAttachment } = require('discord.js');
 
 http.createServer(function(req,res){
-  res.end('Teste')
-  console.log('De pé')
+  res.end('<HTML>  <HEAD>  <TITLE>ExpTesteBot</TITLE>  </HEAD>  <BODY style="background:#A020F0;font-size:50px; color:#FFF" > <div >Chatbot Ativo. <\div>  </BODY>  </HTML>')
+  console.log('De pé    <img src="/bot.png" alt="BotExpTest" width="100px" height="100px">')
 }).listen(process.env.PORT || 5000);
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_PRESENCES] });
