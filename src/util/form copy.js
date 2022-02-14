@@ -35,7 +35,7 @@ module.exports = {
                 collector.on('collect', (m) => {                    
                         if(counter < questions.length){
                             console.log(counter)
-                            if(counter == 1){
+                            if(counter == 2){
                                 if(m.content === '1')
                                 {
                                     m.channel.send(questions[counter++] + 'o **BUG:**' )
@@ -49,7 +49,7 @@ module.exports = {
                                     sair = true
                                     return
                                 }
-                            }else if(counter == 2){
+                            }else if(counter == 3){
                                 m.channel.send(questions[counter++])
                             }               
                             
@@ -73,7 +73,7 @@ module.exports = {
                             counter++                          
                         })
                         console.log(resposta)
-                        if(resposta[2].toLowerCase() === 's'){  
+                        if(resposta[3].toLowerCase() === 's'){  
                             var retorno = formController.findById(message)
                             retorno.then(function(result) {
                                 try{

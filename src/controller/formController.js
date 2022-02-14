@@ -7,16 +7,16 @@ module.exports = {
   //CRIAR CAMPOS IDENTIFICANDO QUAL O APP, CHARTER E SESSÃO O BUG FOI ENCONTRADO.
 
 
-  async insertBugs(message, info, bugFound, anexo){       
+  async insertBugs(message, info, resposta, anexo){       
     const form = mongoose.model('bugs', formSchema.bugSchema)
     const bug = new form({
       testerId: `${message.author.id}`,          
       user: `${message.author.username}`,  
       anexo: anexo,   
       app:`${info.retorno[1]}`,
-      charter:`${info.retorno[2]}`,
+      charter:`${resposta[0]}`,
       session:`1`,   
-      description: `${bugFound}`,
+      description: `${resposta[2]}`,
       data: `${data.pegarDataAtual()}`
     })
     await bug.save();             
@@ -24,7 +24,7 @@ module.exports = {
 
   // ////////////////////////////////
 
-  async insertIssue(message, info, issueFound, anexo){  
+  async insertIssue(message, info, resposta, anexo){  
     console.log(anexo)
     const form = mongoose.model('issues', formSchema.issueSchema)
     const issue = new form({
@@ -32,9 +32,9 @@ module.exports = {
       user: `${message.author.username}`,  
       anexo: anexo,   
       app:`${info.retorno[1]}`,
-      charter:`${info.retorno[2]}`,
+      charter:`${resposta[0]}`,
       session:`1`,   
-      description: `${issueFound}`,
+      description: `${resposta[2]}`,
       data: `${data.pegarDataAtual()}`
     })
     await issue.save();        

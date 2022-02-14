@@ -170,15 +170,15 @@ var ch = '**---------------REMINDERS---------------**\n'+
 '- Funcionalidades: informações, compartilhamento, editar, listar"\n'+
 '**CHARTER 2**\n'+
 '- Explorar "Lista de Compras" e "Lixo"\n'+
-'- Funcionalidades: informações, compartilhamento, editar, listar e testar tudo no lixo.\n' +
-'**--CONFIRA AS IMAGENS ABAIXO--**'
+'- Funcionalidades: informações, compartilhamento, editar, listar e testar tudo no lixo.\n\n' +
+'**--CONFIRA AS IMAGENS DAS TELAS ABAIXO--**'
 
 var aj = "**Para sugestões** é só digitar, **?Bluetooth, ?Conexão de rede, ?Swipe, ?Geral, ?Camera, ?Sdcard, ?Gps**.\n" +
 "Caso prefira várias sugestões sobre algum dos temas acima use as tags:" +
 "\n **?1** - Para Conexão de redes;"+ 
 "\n **?2** - Para Testes em geral;"+
 "\n **?3** - Para Geolocalização - GPS;"+
-"\n **?4** - Para Bluetooth;"+
+"\n **?4** - Para Bluetooth;"
 "\n **?5** - Para Scroll;"+
 "\n **?6** - Para Câmera;"+
 

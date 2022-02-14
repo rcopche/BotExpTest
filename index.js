@@ -84,16 +84,10 @@ client.on("messageCreate", function (message) {
         }else{
           message.reply(ret.retorno);
           if(message.content.toLowerCase() === '?charter'){
-            sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter1.gif', 'Charter 1 Lembretes.png')
-            //sleep(50000)
-            //message.reply('Charter 1 - Tela de Lembretes')     
-            sleep(50000)
-            sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter2C.png', 'Charter 2 Compras.png')           
-            sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter2L.png', 'Charter 2 Lixo.png')
+            sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charters.png',  'Charter.gif')
             
-           // message.reply('Charter 2 - Lista de Compras e Lixo')
-            
-                        
+            //sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter2C.png', 'Charter2 Compras.png')           
+            //sendAttached.sendAttached(message, 'https://www.grupotcm.com.br/downloads/Charter2L.png', 'Charter 2 Lixo teste.png')
           }
         }
       }

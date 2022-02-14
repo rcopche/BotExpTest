@@ -36,7 +36,9 @@ function Timer(message) {
 //Função que recebe o tempo digitado pelo testador
 async function SetTime(message){             
     try{       
-            const questions = [
+            const questions = [                
+                'Qual o App você irá testar?\nPara **BookCatalog** digite **1** para **Reminders** digite **2**',
+                'Qual **charter** irá aplicar **1** ou **2**?',
                 'Digite o tempo da sessão em minutos (**Sessão mínima 30 min.**), ou digite qualquer caracter para sair.',
             ]
             let time = 60000
@@ -75,23 +77,40 @@ async function SetTime(message){
                         return
                     } 
                     if(i==0){
+                        app = value.content
+                    }else if(i==1){
+                        charter = value.content
+                    }else if(i==2){//ultimo valor do vetor trás o tempo da sessão
                         minDigitado = value.content
-                    }                    
+                    }                      
                     i++  
                 })   
                 
-                if( minDigitado >= 30){
+                if(app!=0 && charter!=0 && minDigitado!=0){
+                    if(app<3 && charter<3 && minDigitado >= 30){
+                        console.log("Charter: ",charter)
+                        console.log("App: ",app)
+                        console.log("Min: ",minDigitado)
+                        formController.insertCharter(message, charter, app, minDigitado)
                         //count = 1800; //1800 = 30 min. 1800/60 = 30 min.
                         count = minDigitado * 60 
                         tempo(message)
-                        start()                                  
-                }else{
-                    message.reply('```diff\n- A Sessão de teste não foi iniciada. \nTempo da sessão deve ser maior ou igual a 30 min. \nTente novamente.```')
-                        liga = 0
+                        start() 
                         
-                        return
-                }
+                        
 
+                    }  else{
+                        message.reply('```diff\n- A Sessão de teste não foi iniciada. \nAs opções digitadas não são válidas. \nTente novamente.```')
+                        liga = 0
+                        console.log('Opções inválidas')
+                        return
+                    }                 
+                }else{
+                    message.reply('```diff\n- A Sessão de teste não foi iniciada. \nAs opções digitadas não são válidas. \nTente novamente.```')
+                    liga = 0
+                    console.log('Opções inválidas')
+                    return
+                }
             })
             
         

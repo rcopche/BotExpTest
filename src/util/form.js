@@ -17,6 +17,7 @@ module.exports = {
                 //message.channel.send(`Você terá ${timeString} para noticiar sobre seus testes `)
 
                 const questions = [
+                    'Qual **charter** você está aplicando 1 ou 2?',
                     `O que deseja relatar? \nPara **BUG** digite    **1**; \nPara **ISSUE** digite    **2**; \nPara **SAIR** digite    **3**.`,
                     'OK, Descreva brevemente ',
                     'Muito bem, agora você pode anexar arquivos ou imagens relacionadas ao seu relato clicando no **+** que está do lado esquerdo da caixa de digitação.',
@@ -38,23 +39,22 @@ module.exports = {
                 collector.on('collect', (m) => {                    
                     if(counter < questions.length){
                         //console.log(counter)
-                        if(counter == 1){
+                        if(counter == 2){
                             if(m.content === '1')
                             {
                                 m.channel.send(questions[counter++] + 'o **BUG:**.' )
+                                console.log(counter)
                             }else if(m.content === '2')
                             {
                                 m.channel.send(questions[counter++] + 'a **ISSUE:**' )
                             }else 
                             {                            
                                 message.channel.send('**CANCELADO**')
-                                counter = 3
+                                counter = 4
                                 sair = true
                                 return
-                            }                                                       
-                        }else if(counter == 2){
-                            m.channel.send(questions[counter++]);
-                        } else if(counter == 3){
+                            }                                                                                
+                        } else if(counter == 4){
                             var i = 0
                             if (m.attachments) {
                                 let attachments = m.attachments;       
@@ -66,7 +66,9 @@ module.exports = {
                                 //console.log(attachments)
                             } 
                             m.channel.send(questions[counter++])                                
-                        }       
+                        } else{
+                            m.channel.send(questions[counter++]);
+                        }      
                                             
                     }                    
                 })        
@@ -87,26 +89,26 @@ module.exports = {
                             counter++                          
                         })
                         
-                        if(resposta[3].toLowerCase() === 's'){ 
+                        if(resposta[4].toLowerCase() === 's'){ 
                             var info = timer.TimerInfo
                             var i = new info(message)                            
                             //bug
-                            if(resposta[0] === `1`){
+                            if(resposta[1] === `1`){                                
                                 var retorno = formController.findById(message)
                                 retorno.then(function(result) {
                                     try{
-                                        formController.insertBugs(message, i, resposta[1], anexo)
+                                        formController.insertBugs(message, i, resposta, anexo)
                                         message.reply("**Bug salvo com sucesso.**")
                                     }catch(err){                                                                 
                                         message.reply("**Erro ao salvar bug**")
                                     }                                    
                                 })
                              //issue
-                            }else if(resposta[0] === `2`){
+                            }else if(resposta[1] === `2`){                                
                                 var retorno = formController.findById(message)
                                 retorno.then(function(result) {
                                     try{
-                                        formController.insertIssue(message, i, resposta[1], anexo)
+                                        formController.insertIssue(message, i, resposta, anexo)
                                         message.reply("**Issue salva com sucesso.**")
                                     }catch(err){                                                               
                                         message.reply("**Erro ao salvar issue**" + err)
