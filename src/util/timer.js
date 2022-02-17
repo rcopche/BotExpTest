@@ -37,7 +37,7 @@ function Timer(message) {
 async function SetTime(message){             
     try{       
             const questions = [
-                'Digite o tempo da sessão em minutos (**Sessão mínima 30 min.**), ou digite qualquer caracter para sair.',
+                'Digite o tempo da sessão em minutos (**Sessão mínima 15 min.**), ou digite qualquer caracter para sair.',
             ]
             let time = 60000
             let timeString = millisToMinutesAndSeconds(time)            
@@ -80,7 +80,7 @@ async function SetTime(message){
                     i++  
                 })   
                 
-                if( minDigitado >= 30){
+                if( minDigitado >= 15){
                         //count = 1800; //1800 = 30 min. 1800/60 = 30 min.
                         count = minDigitado * 60 
                         tempo(message)

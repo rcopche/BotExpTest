@@ -130,7 +130,7 @@ var man = '**COMO PROCEDER NO TESTE EXPLORATÓRIO?**\n\n'+
 'fuja do charter, é necessário que você passe a maior parte do tempo testando o '+
 'que o charter sugere.\n'+
 '**4. Iniciar sessão de teste:** digite **?iniciar** para começar a sessão. Será solicitado também que você digite o '+
-'tempo da sessão, que deve ser configurado em *minutos* nesse caso não é necessário digitar o prefixo **?** somente o número; exemplo 30 - para 30 minutos. '+ 
+'tempo da sessão, que deve ser configurado em *minutos* nesse caso não é necessário digitar o prefixo **?** somente o número; exemplo 15 - para 15 minutos. '+ 
 'Após o tempo configurado pressione enter que o bot '+
 'iniciará a sessão e fará o controle do tempo lhe avisando quando a sessão terminar. Você pode interromper a contagem do tempo '+
 'digitando **?parar** (Lembre-se caso pare a sessão será perdida).\n'+
@@ -178,10 +178,9 @@ var aj = "**Para sugestões** é só digitar, **?Bluetooth, ?Conexão de rede, ?
 "\n **?1** - Para Conexão de redes;"+ 
 "\n **?2** - Para Testes em geral;"+
 "\n **?3** - Para Geolocalização - GPS;"+
-"\n **?4** - Para Bluetooth;"
+"\n **?4** - Para Bluetooth;"+
 "\n **?5** - Para Scroll;"+
 "\n **?6** - Para Câmera;"+
-
 "\n\n **Para conhecer estratégias e critérios de teste de software escolha:**" +
 "\n    **- Estratégias** "+
 "\n **?7** - Exploratory Smoke Testing"+
@@ -195,13 +194,22 @@ var aj = "**Para sugestões** é só digitar, **?Bluetooth, ?Conexão de rede, ?
 "\n **?14** - Particionamento de Classe de Equivalência"+
 "\n **?15** - Análise de Valor Limite"
 
+var com = "\n ** COMANDOS DO CHATBOT ** \n" +
+"\n **?Olá** - Comando de inicialização da interação. Chatbot irá te guiar;"+ 
+"\n **?Manual** - Trará os procedimentos para aplicação do teste exploratório com o chatbot;"+
+"\n **?Ajuda** - Será mostrado as palavras chave para que o Chatbot de sugestões de teste;"+
+"\n **?Charter** - Apresentará os seus objetivos no Teste;"+
+"\n **?Iniciar** - Inicia o relógia que controla o tempo da sessão;"+
+"\n **?Parar** - Interrompe e descarta a sessão;"+
+"\n **?Relatar** - O comando ?Relatar será utilizado dentro de uma sessão ativa para reportar Bugs e Issues."
+
 
 var pergunta = [
 	["olá", "ola", "boa noite", "bom dia", "boa tarde", "oi", "oi tudo bem", "ei", 
-	"iniciar teste", "testar", "teste", "começar", "como começo", "oba", "<inicio>", "<início>",
-	"opa", "blz", "beleza", "fala", "bot", "chatbot", "robo", "<ola>", "<olá>" , "<teste>", "<menu>", "menu"], 	
+	"iniciar teste", "testar", "teste", "começar", "como começo", "oba", "inicio", "início",
+	"opa", "blz", "beleza", "fala", "bot", "chatbot", "robo", "menu"], 	
 	["bluetooth", "blue"],
-	["swipe", "swype", "giro", "orientação de tela", "orientação", "orientacao", "<tela>", "tela" ],
+	["swipe", "swype", "giro", "orientação de tela", "orientação", "orientacao", "tela" ],
 	["geral", "gerais",  "<geral>"],
 	["rede", "conexão de rede", "conexão", "conexao", "conexao de rede"],
 	["cartão de memória","cartão", "cartao de memoria","cartao","sdcard"],
@@ -210,7 +218,7 @@ var pergunta = [
 	["manual"],	
 	["charter", "charters"],
 	["ajuda","help"],
-	
+	["comando","comandos"],	
 ];
 
 var resposta = [
@@ -225,6 +233,7 @@ var resposta = [
 	[man],
 	[ch],
 	[aj],
+	[com],
 
 ];
 

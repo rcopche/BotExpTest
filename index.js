@@ -93,7 +93,7 @@ client.on("messageCreate", function (message) {
       }
     } else if (message.content.substring(0, 10).toLowerCase() === '?novocanal') {
       //console.log(message.content.replace('?', '').substring(0, 8), 'teste')
-      novoCanal(message)      
+      //novoCanal(message)      
     } else if (message.content.toLowerCase() === '?relatar') {
       var info = timer.TimerInfo
       var i = new info(message)  
